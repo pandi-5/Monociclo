@@ -1,0 +1,83 @@
+$date
+	Fri Nov 14 14:55:39 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module DataMemory_tb $end
+$var wire 32 ! DataRd_tb [31:0] $end
+$var reg 32 " Address_tb [31:0] $end
+$var reg 3 # DMCtrl_tb [2:0] $end
+$var reg 1 $ DMWr_tb $end
+$var reg 32 % DataWr_tb [31:0] $end
+$scope module DM_instance $end
+$var wire 32 & Address [31:0] $end
+$var wire 3 ' DMCtrl [2:0] $end
+$var wire 1 $ DMWr $end
+$var wire 32 ( DataWr [31:0] $end
+$var reg 32 ) DataRd [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b10101010101110111100110011011101 )
+b10101010101110111100110011011101 (
+b10 '
+b0 &
+b10101010101110111100110011011101 %
+1$
+b10 #
+b0 "
+b10101010101110111100110011011101 !
+$end
+#10000
+0$
+#20000
+b11111111111111111111111111101110 !
+b11111111111111111111111111101110 )
+b0 #
+b0 '
+1$
+b11101110 %
+b11101110 (
+b100 "
+b100 &
+#30000
+0$
+#40000
+b11101110 !
+b11101110 )
+b100 #
+b100 '
+#50000
+b11111111111111111111101011001110 !
+b11111111111111111111101011001110 )
+1$
+b1 #
+b1 '
+b1111101011001110 %
+b1111101011001110 (
+b1000 "
+b1000 &
+#60000
+0$
+#70000
+b1111101011001110 !
+b1111101011001110 )
+b101 #
+b101 '
+#80000
+b10101010101110111100110011011101 !
+b10101010101110111100110011011101 )
+b10 #
+b10 '
+b0 "
+b0 &
+#90000

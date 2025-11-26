@@ -1,0 +1,100 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_000001d5325168a0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000001d5325277c0 .scope module, "InstructionMemory_tb" "InstructionMemory_tb" 3 1;
+ .timescale 0 0;
+v000001d532575b20_0 .var "Address_tb", 31 0;
+v000001d532575da0_0 .net "Funct3_tb", 2 0, L_000001d532575940;  1 drivers
+v000001d532576200_0 .net "Funct7_tb", 6 0, L_000001d532576520;  1 drivers
+v000001d5325762a0_0 .net "OpCode_tb", 6 0, L_000001d532575c60;  1 drivers
+v000001d532576340_0 .net "inst_tb", 31 7, L_000001d5325760c0;  1 drivers
+v000001d532575e40_0 .net "rd_tb", 4 0, L_000001d5325765c0;  1 drivers
+v000001d532576020_0 .net "rs1_tb", 4 0, L_000001d532575ee0;  1 drivers
+v000001d532575a80_0 .net "rs2_tb", 4 0, L_000001d532576700;  1 drivers
+S_000001d532527950 .scope module, "InstanceIM" "InstructionMemory" 3 13, 4 1 0, S_000001d5325277c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "Address";
+    .port_info 1 /OUTPUT 7 "OpCode";
+    .port_info 2 /OUTPUT 5 "rd";
+    .port_info 3 /OUTPUT 3 "Funct3";
+    .port_info 4 /OUTPUT 5 "rs1";
+    .port_info 5 /OUTPUT 5 "rs2";
+    .port_info 6 /OUTPUT 7 "Funct7";
+    .port_info 7 /OUTPUT 25 "inst";
+L_000001d532529ae0 .functor BUFZ 32, L_000001d532576660, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>, C4<00000000000000000000000000000000>;
+v000001d532516a30_0 .net "Address", 31 0, v000001d532575b20_0;  1 drivers
+v000001d5324d6a90_0 .net "Funct3", 2 0, L_000001d532575940;  alias, 1 drivers
+v000001d532527ae0_0 .net "Funct7", 6 0, L_000001d532576520;  alias, 1 drivers
+v000001d532527b80_0 .net "OpCode", 6 0, L_000001d532575c60;  alias, 1 drivers
+v000001d532524370_0 .net *"_ivl_0", 31 0, L_000001d532576660;  1 drivers
+v000001d532524410_0 .net *"_ivl_3", 7 0, L_000001d532575bc0;  1 drivers
+v000001d5325244b0_0 .net *"_ivl_4", 9 0, L_000001d5325763e0;  1 drivers
+L_000001d532576868 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v000001d5325767a0_0 .net *"_ivl_7", 1 0, L_000001d532576868;  1 drivers
+v000001d5325759e0_0 .net "inst", 31 7, L_000001d5325760c0;  alias, 1 drivers
+v000001d532576480_0 .net "instruction", 31 0, L_000001d532529ae0;  1 drivers
+v000001d532575f80 .array "mem", 255 0, 31 0;
+v000001d532576160_0 .net "rd", 4 0, L_000001d5325765c0;  alias, 1 drivers
+v000001d5325758a0_0 .net "rs1", 4 0, L_000001d532575ee0;  alias, 1 drivers
+v000001d532575d00_0 .net "rs2", 4 0, L_000001d532576700;  alias, 1 drivers
+L_000001d532576660 .array/port v000001d532575f80, L_000001d5325763e0;
+L_000001d532575bc0 .part v000001d532575b20_0, 2, 8;
+L_000001d5325763e0 .concat [ 8 2 0 0], L_000001d532575bc0, L_000001d532576868;
+L_000001d532575c60 .part L_000001d532529ae0, 0, 7;
+L_000001d5325765c0 .part L_000001d532529ae0, 7, 5;
+L_000001d532575940 .part L_000001d532529ae0, 12, 3;
+L_000001d532575ee0 .part L_000001d532529ae0, 15, 5;
+L_000001d532576700 .part L_000001d532529ae0, 20, 5;
+L_000001d532576520 .part L_000001d532529ae0, 25, 7;
+L_000001d5325760c0 .part L_000001d532529ae0, 7, 25;
+    .scope S_000001d5325277c0;
+T_0 ;
+    %vpi_call/w 3 26 "$dumpfile", "sim/InstructionMemory_tb.vcd" {0 0 0};
+    %vpi_call/w 3 27 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001d5325277c0 {0 0 0};
+    %pushi/vec4 1048723, 0, 32;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001d532575f80, 4, 0;
+    %pushi/vec4 2130195, 0, 32;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001d532575f80, 4, 0;
+    %pushi/vec4 2163123, 0, 32;
+    %ix/load 4, 2, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001d532575f80, 4, 0;
+    %pushi/vec4 1076953651, 0, 32;
+    %ix/load 4, 3, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4a v000001d532575f80, 4, 0;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001d532575b20_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 4, 0, 32;
+    %store/vec4 v000001d532575b20_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 8, 0, 32;
+    %store/vec4 v000001d532575b20_0, 0, 32;
+    %delay 10, 0;
+    %pushi/vec4 12, 0, 32;
+    %store/vec4 v000001d532575b20_0, 0, 32;
+    %delay 10, 0;
+    %vpi_call/w 3 41 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb/InstructionMemory_tb.sv";
+    "src/InstructionMemory.sv";
